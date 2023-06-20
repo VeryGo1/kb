@@ -1,0 +1,38 @@
+.ct{margin-bottom:80px;}
+.ct .content-wrapper *{font-size: 18px; line-height: 30px; font-weight: 400;color: #494949;}
+.ct .content-wrapper h3,.ct .content-wrapper h1,.ct .content-wrapper h2{text-align: left; margin: 1em 0; }
+.ct .content-wrapper p{margin: 1.7em 0;}
+.ct .content-wrapper ul{margin: 0.2em 0;padding:0; width:100%; }
+
+.ct .content-wrapper div{margin: 0.5em 0;padding:0;}
+.ct .content-wrapper ul li,.ct .content-wrapper ul ol{margin: 0.5em 0;padding:0;}
+/*分辨率（大于960px，小于1199px）(min-width: 960px) and (max-width: 1199px) */
+.ct .content-wrapper iframe{ min-height:600px; }
+
+@media screen and (min-width: 100px) {.ct .content-wrapper img{width: 100%; height: auto;}.ct p{text-align:left;}}
+@media screen and (max-width: 768px) {
+	.ct .content-wrapper iframe{width:100% !important; min-height: 380px;}
+	.ct .content-wrapper .bh-grids-img{width:100% !important; padding:0 2vw;}
+}
+@media screen and (min-width: 768px) {
+	.ct .content-wrapper img{width:auto;}.ct .content-wrapper p{text-align:center;}
+	.ct .content-wrapper .bh-grids-img{width:100% !important; padding:0 2vw;}
+}
+.ct .content-wrapper img,.ct .content-wrapper iframe{margin:0 auto; display:block; max-width:100% !important;}
+.comic-title{font-size:18px; line-height: 27px; font-weight: 400; color: #494949;}
+.article-detail-section dl{margin: 0;}
+.badge{ font-weight: 400;}
+.default-wrapper h3 {float:left;height:20px;line-height:20px;margin-top:10px;font-size:16px;font-weight:bold;text-indent:10px;color:#303030;text-align:left;border-left:#e40b21 5px solid;}
+.default-wrapper ul.list-style li:before{border-radius:50%;background-color:#ccc;content:" ";display:inline-block;width:5px;height:5px;position:absolute;left:0;top:10px;}
+.ct .content-wrapper{overflow: hidden !important; min-height:540px;}
+figcaption{padding:0 !important;}
+.video-container{width:100% !important; padding:0 !important;}
+.banner-container .header-banner-main a img { float:left; width:100%; margin:10px auto !important;}
+.banner-container .slider-nav-block{ display:none;}
+.banner-container .slider-count{ display:none;}
+.bh-grids-img-box img{ border:1px solid #fff; border-width:0 1px 0 1px; }
+.kanbook-table{ width:100%;}
+.kanbook-table td{ padding:2px;}
+.ct .content-wrapper .kan_book_img_thumb img { max-width:350px !important;}
+
+
