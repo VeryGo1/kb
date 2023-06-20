@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+@font-face{font-family:'ac-font';src:url("/public/fonts/ac-font/ac-font_e0f5dd9db640f3e8.eot");src:url("/public/fonts/ac-font/ac-font_e0f5dd9db640f3e8.eot") format("embedded-opentype"),url("/public/fonts/ac-font/ac-font_25f89c14203522d2.woff") format("woff"),url("/public/fonts/ac-font/ac-font_344ab3ba126a5fe4.ttf") format("truetype");font-weight:normal;font-style:normal}
+@font-face{font-family:'ac-font-new';src:url("/public/fonts/ac-font-new/comic4qq_7d550dcf27d9a1c3.eot");src:url("/public/fonts/ac-font-new/comic4qq_7d550dcf27d9a1c3.eot") format("embedded-opentype"),url("/public/fonts/ac-font-new/comic4qq_69291e08f9860755.woff") format("woff"),url("/public/fonts/ac-font-new/comic4qq_7dd7212b188f04b7.ttf") format("truetype");font-weight:normal;font-style:normal}
+@font-face{font-family:'iconfont';src:url("/public/fonts/iconfont/iconfont_75ed02509cd5dfbd.eot");src:url("/public/fonts/iconfont/iconfont_75ed02509cd5dfbd.eot") format("embedded-opentype"),url("/public/fonts/iconfont/iconfont_f2f1319c45cc65c1.woff") format("woff"),url("/public/fonts/iconfont/iconfont_f54338a6939ac67d.ttf") format("truetype");font-weight:normal;font-style:normal}
+
+.icon-ac,.icon-ac:before{font-family:'ac-font';speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.ac-new,.ac-new:before{font-family:'ac-font-new';speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.iconfont,.iconfont:before{font-family:'iconfont';speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+.icon-back:before{color:#ff7400;font-family:"ac-font-new"!important;content:"\E605"}
+.icon-share:before{color:#ff7400;font-family:"ac-font-new"!important;content:"\E602"}
+.detail-author:before{font-family:'ac-font';content:"\e619";margin-right:5px;font-size:14px;color:#7a8090}
+.detail-tag:before{font-family:'ac-font';content:"\e606";margin-right:5px;font-size:14px;color:#7a8090}
+.detail-hot:before{font-family:'ac-font';content:"\e60f";margin-right:5px;font-size:14px;color:#7a8090}
