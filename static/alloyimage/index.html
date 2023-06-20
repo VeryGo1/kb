@@ -1,0 +1,540 @@
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tencent.AlloyTeam.Dorsywang" />
+	<meta name="copyright" content="Tencent.AlloyTeam" />
+	<meta name="keywords" content="alloyPhoto 简约版,alloyImage,alloyPhoto,html5 canvas,alloyTeam" />
+	<meta name="description" content="alloyPhoto简约版，一款基于alloyImage库的图像处理应用,alloyImage是基于html5的图像处理js代码库。" />
+
+	<title>AlloyPhoto 简约版--Tencent AlloyTeam</title>
+
+	<script type="text/javascript" src="./release/alloyimage.1.2b.js"></script>
+<style>
+
+	html,body{
+		background:url(image/cardboard.png);
+		height:100%;
+		padding:0;
+		margin:0;
+		min-width:1003px;
+		text-shadow:0 1px 3px rgba(0, 0, 0, 0.75);
+		color:#fff;
+		font-family:Microsoft Yahei,"宋体";
+		overflow:hidden;
+	}
+	li{
+		list-style:none;
+	}
+	h3{
+		font-weight:normal;
+		text-align:center;
+		height:30px;
+		line-height:30px;
+		font-size:16px;
+	}
+	.header{
+		border-bottom:1px solid #575C62;
+		text-align:center;
+		margin:0;
+		height:40px;
+		line-height:40px;
+		background:#26292d;
+	}
+	.wrapper{
+		border-top:1px solid #282B2F;
+		height:100%;
+		/*
+		display:box;
+		display:-webkit-box;
+		display:-moz-box;
+		box-orient:horizontal;
+		-webkit-box-orient:horizontal;
+		*/
+	}
+	.left{
+		width:250px;
+		border-right:1px solid #575C62;
+		height:100%;
+		overflow-y:auto;
+		overflow-x:hidden;
+		float:left;
+		padding:0;
+	}
+	.right{
+		/*
+		box-flex:1;
+		-webkit-box-flex:1;
+		-moz-box-flex:1;
+		*/
+		border-left:1px solid #282B2F;
+		width:600px;
+		float:left;
+	}
+	.effects{
+		border-top:1px solid #575C62;
+		border-bottom:1px solid #282B2F;
+		padding:0;
+	}
+	.effects li{
+		margin-left:0;
+		border-top:1px solid #282B2F;
+		border-bottom:1px solid #575C62;
+		list-style:none;
+		transition:all ease-in .2s;
+		-webkit-transition:all ease-in .2s;
+		height:80px;
+		overflow:hidden;
+	}
+	.imgWrapper{
+		margin:0px;
+		margin-left:15px;
+		padding:0;
+		line-height:80px;
+		border-top-left-radius:10px;
+		border-bottom-left-radius:10px;
+		width:250px;
+		transition:all ease-in .2s;
+		-webkit-transition:all ease-in .2s;
+		position:relative;
+		height:80px;
+		cursor:pointer;
+	}
+	.imgWrapper img{
+		margin:0;
+		width:100px;
+		height:60px;
+		left:0;
+		top:10px;
+		position:absolute;
+		border:none;
+		border-radius:10px;
+		z-index:3;
+		cursor:pointer;
+	}
+	#infoMsg{
+		position:absolute;
+		top:170px;
+		left:450px;
+		z-index:9;
+		width:100px;
+		height:100px;
+		text-align:center;
+		line-height:100px;
+		background:#333;
+		border-radius:4px;
+		opacity:0.7;
+		display:none;
+		color:#ccc;
+	}
+	.imgWrapper{
+		width:250px;
+		padding-left:110px;
+	}
+	.imgWrapper img:hover{
+		box-shadow:0 0 10px #52cca0;
+		-webkit-box-shadow:0 0 10px #52cca0;
+		-moz-box-shadow:0 0 10px #52cca0;
+	}
+
+	.effects li:hover{
+		background:#5344c3;
+	}
+	.picWrapper{
+		position:relative;
+		width:100%;
+		height:500px;
+	}
+	.pic{
+		position:absolute;
+		left:0;
+		top:0;
+		2box-shadow:6px 6px 3px #333;
+		2-webkit-box-shadow:6px 6px 3px #333;
+	}
+	.command{
+		background:#27282b;
+		background:-webkit-gradient(linear,left top,left bottom,from(#26292d),color-stop(50%,#27282b),to(#26292d));
+		height:100px;
+		border-top:1px solid #565555;
+		border-bottom:1px solid #565555;
+		position:fixed;
+		bottom:0;
+		width:100%;
+		z-index:10;
+	}
+	.demoImg{
+		float:left;
+		margin-right:20px;
+	}
+	.demoImg li{
+		list-style:none;
+		display:inline-block;
+		margin-left:10px;
+		vertical-align:middle;
+		text-align:center;
+	}
+	.d_item{
+		width:80px;
+		height:90px;
+		overflow:hidden;
+		position:relative;
+	}
+	.d_item img{
+		width:80px;
+		height:auto;
+		border:3px solid rgb(45,45,45);
+	}
+	.lab{
+		position:absolute;
+		bottom:0;
+		width:100%;
+		text-align:center;
+		padding-bottom:10px;
+		font-size:12px;
+	}
+	.footer{
+		float:right;
+		margin-right:20px;
+		margin-top:50px;
+		font-size:12px;
+		text-align:right;
+	}
+	.footer a{
+		text-decoration:none;
+		color:#fff;
+	}
+	.footer a:hover{
+		text-decoration:underline;
+	}
+	/*
+	 * botton'
+	 * */
+	a.button{
+		text-decoration:none;
+		-moz-border-radius:5px;
+		-webkit-border-radius:5px;
+		border-radius:5px;
+		background: #E0B324;
+
+		background: -moz-linear-gradient(0% 45% 90deg,#E0B324, #FAD121, #FFE678 100%);
+
+		background: -webkit-gradient(linear, 0% 0%, 0% 65%, from(#FFE678), to(#E0B324), color-stop(.2,#FAD121));
+
+		color:#312f30;
+		float:left;
+		font-family:arial,helvetica,sans-serif;
+		font-size:17px;
+		font-weight:bold;
+		padding:10px 20px;
+		text-shadow:1px 1px 0 #ebd663;
+	}
+
+	a.button:hover{
+		background: #D4A922;
+		background: -moz-linear-gradient(40% 51% 90deg,#D4A922, #EBC41F, #EDD670 100%);
+		background: -webkit-gradient(linear, 0% 0%, 0% 65%, from(#EDD670), to(#D4A922), color-stop(.2,#EBC41F));
+	}
+
+	.command_items{
+		float:left;
+		margin-top:20px;
+		margin-left:0;
+		padding:0;
+	}
+	#open{
+		display:none;
+	}
+	.d_item{
+		cursor:pointer;
+	}
+
+	::-webkit-scrollbar-track-piece {
+		background-color:#f5f5f5;
+		border-left:1px solid #d2d2d2;
+	}
+	::-webkit-scrollbar {
+		width:13px;
+		height:13px;
+	}
+	::-webkit-scrollbar-thumb {
+		background-color:#c2c2c2;
+		background-clip:padding-box;
+		border:1px solid #979797;
+		min-height:28px;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		border:1px solid #636363;
+		background-color:#929292;
+	}
+
+
+</style>
+</head>
+<body>
+<div class="header">AlloyPhoto 简约版 1.0</div>
+<div class="wrapper">
+	<div class="left">
+		<h3>效果</h3>
+		<ul id="effects" class="effects">
+			<li class="e_item">
+				<div class="imgWrapper">
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="right">
+		<div id="picWrapper" class="picWrapper">
+			<img src="img/bulding.jpg" class="pic" id="pic" alt="" draggable="false"/>
+			<div id="infoMsg">处理中</div></div>
+	</div>
+</div>
+<div class="command">
+	<ul class="demoImg">
+		<li>示例图片 <br />demos</li>
+		<li class="d_item"><img src="img/bulding.jpg" /><div class='lab'>建筑</div></li>
+		<li class="d_item"><img src="img/big.jpg" /><div class='lab'>特写</div></li>
+		<li class="d_item"><img src="img/small.jpg" /><div class='lab'>微距</div></li>
+		<li class="d_item"><img src="img/girl.jpg" /><div class='lab'>人物</div></li>
+		<li class="d_item"><img src="img/inner.jpg" /><div class='lab'>室内</div></li>
+		<li class="d_item"><img src="img/pet.jpg" /><div class='lab'>宠物</div></li>
+		<li class="d_item"><img src="img/scen.jpg" /><div class='lab'>风景</div></li>
+		<li class="d_item"><img src="img/stop.jpg" /><div class='lab'>静物</div></li>
+	</ul>
+	<ul class="command_items">
+		<li>
+			<a class="button" href="#" class="mask">打开图片</a>
+		</li>
+	</ul>
+
+</div>
+<input type="file" name="open" id="open" class="open" />
+
+
+
+<script>
+
+	(function(){
+		var Main = {
+			img: null,
+			addEvent: function(selector, eventType, func){
+				var proName = "";
+
+				switch(true){
+					case /^\./.test(selector) :
+						proName = "className";
+						selector = selector.replace(".", "");
+						break;
+					case /^\#/.test(selector) :
+						proName = "id";
+						selector = selector.replace("#", "");
+						break;
+					default:
+						proName = "tagName";
+				}
+
+				document.body.addEventListener(eventType,function(e){
+					function check(node){
+						if(! node.parentNode) return;
+
+						if(node[proName] == selector){
+							func.call(node, e);
+						};
+						check(node.parentNode);
+					}
+					check(e.target);
+				}, false);
+			},
+			eventAtt: function(){
+				var _this = this;
+
+
+
+				var clickFlag = 0, dx, dy, left, top;
+				this.addEvent(".pic", "mousedown", function(e){
+					dx = e.clientX;
+					dy = e.clientY;
+
+					left = parseInt(pic.style.left);
+					top = parseInt(pic.style.top);
+
+					clickFlag = 1;
+				});
+				this.addEvent(".picWrapper", "mouseup", function(e){
+					clickFlag = 0;
+				});
+
+				document.getElementById("picWrapper").onmousemove = function(e){
+
+					var x = e.clientX;
+					var y = e.clientY;
+
+					if(clickFlag){
+						var pic = document.getElementById("pic");
+
+						var x = e.clientX;
+						var y = e.clientY;
+
+						var rLeft = left + (x - dx);
+						var rTop = top + (y - dy);
+						if(rLeft < 0) rLeft = 0;
+						if(rTop < 0) rTop = 0;
+
+						pic.style.left = rLeft + "px";
+						pic.style.top = rTop + "px";
+					}
+				};
+
+				this.addEvent(".d_item", "click", function(e){
+					var img = this.getElementsByTagName("img")[0];
+					var pic = document.getElementById("pic");
+					pic.src = img.src;
+					pic.onload = function(){
+						_this.initView();
+						_this.img = AlloyImage(this);
+					};
+				});
+
+				this.addEvent(".button", "click", function(e){
+					document.getElementById("open").click();
+				});
+
+				this.addEvent(".open", "change", function(e){
+					_this.openFile(e.target.files[0]);
+				});
+
+				this.addEvent(".imgWrapper", "click", function(e){
+					var text = this.childNodes[1].nodeValue.replace("效果","");
+					var img = document.getElementById("pic");
+					var AP = _this.img.clone();
+					if(text == "原图") AP.replace(img);
+					else{
+						msgEle.style.display = "block";
+
+						setTimeout(function(){
+							var t = + new Date();
+							AP.ps(text).replace(img).complete(function(){
+								console.log(text + "：" + (+ new Date() - t) / 1000 + "s");
+								msgEle.style.display = "none";
+							});
+						}, 2);
+					}
+				});
+
+				document.body.addEventListener("drop", function(e){
+					e.preventDefault();
+					var fileList = e.dataTransfer.files;
+					_this.openFile(fileList[0]);
+				},false);
+
+				window.onresize = function(){
+					_this.initView();
+				};
+
+			},
+
+			init: function(){
+				this.initView();
+				this.showModel();
+				this.eventAtt();
+
+				var _this = this;
+				var pic = document.getElementById("pic");
+				pic.onload = function(){
+					_this.img = AlloyImage(this);
+					_this.initView();
+				};
+			},
+
+			initView: function(){
+				var func = function(){
+
+					var w_width = parseInt(document.body.clientWidth) - 250;
+					var w_height = document.body.clientHeight;
+					var p_width = this.width;
+					var p_height = this.height;
+
+					var left = (parseInt(w_width) - parseInt(p_width)) / 2;
+					var top = (parseInt(w_height) - parseInt(p_height)) / 2;
+					top = top < 0 ? 0 : top;
+					left = left < 0 ? 0 : left;
+					this.style.left = left + "px";
+					this.style.top = top + "px";
+					msgEle.style.left = (parseInt(w_width) - 100) / 2 + "px";
+					msgEle.style.top = (parseInt(w_height) - 100) / 2 + "px";
+				};
+				func.call(document.getElementById("pic"));
+
+				var height = document.body.clientHeight;
+				var left = document.querySelector(".left");
+				var leftHeight = height - 143;
+				left.style.height = leftHeight + "px";
+			},
+
+			//打开文件
+			openFile: function(fileUrl){
+
+				var reader = new FileReader();
+				var _this = this;
+				reader.readAsDataURL(fileUrl);
+				reader.onload = function(){
+					var pic = document.getElementById("pic");
+					pic.src = this.result;
+					pic.onload = function(){
+						_this.initView();
+						_this.img = AlloyImage(this);
+					};
+				};
+
+			},
+
+			showModel: function(){
+				var EasyReflection = {
+					"美肤" : "e1",
+					"素描" : "e2",
+					"自然增强2" : "e3",
+					"紫调" : "e4",
+					"柔焦" : "e5",
+					"复古" : "e6",
+					"黑白" : "e7",
+					"仿lomo" : "e8",
+					"亮白增强" : "e9",
+					"灰白" : "e10",
+					"灰色" : "e11",
+					"暖秋" : "e12",
+					"木雕" : "e13",
+					"粗糙" : "e14"
+				};
+				var effectModel = '<li class="e_item"><div class="imgWrapper"><img src="style/image/demo/{pic}.png" alt="" />{effect}</div></li>';
+				var html = '<li class="e_item"><div class="imgWrapper"><img src="style/image/demo/e1.jpg" alt="" />原图</div></li>';
+
+
+				for(var i in EasyReflection){
+					html += effectModel.replace("{effect}",i.length < 3 ? i + "效果" : i).replace("{pic}", EasyReflection[i]);
+				}
+
+				document.getElementById("effects").innerHTML = html;
+			}
+
+		};
+
+		var msgEle;
+
+		window.addEventListener("DOMContentLoaded", function(){
+			msgEle = document.getElementById("infoMsg");
+			Main.init();
+		}, false);
+
+	})();
+
+
+</script>
+
+
+
+</body>
+</html>
+
+
