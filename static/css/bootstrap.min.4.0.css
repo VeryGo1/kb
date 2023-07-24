@@ -77,12 +77,12 @@ a:focus,button:focus{outline:none}body{background-color:#f0f2f5;color:rgba(0,0,0
 .cover4-hover:hover{background-color:rgba(0,0,0,0.03); cursor:pointer;}
 
 
-.cover-play{display:block;position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;background:rgba(0,0,0,0.2) url("https://scdn.kanbook.net/static/images/static/images/play.png") center center no-repeat;transition:all 0.2s ease-in-out;opacity:0; background-size: 110px 110px;}
+.cover-play{display:block;position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;background:rgba(0,0,0,0.2) url("https://scdn.kanbook.net/static/images/static/images/videoplay.png") center center no-repeat;transition:all 0.2s ease-in-out;opacity:0; background-size: 110px 110px;}
 
 .cover-read,.cover-read-o{display:block;position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;background:rgba(0,0,0,0.2) url("https://scdn.kanbook.net/static/images/bookread.png") center center no-repeat;transition:all 0.2s ease-in-out;opacity:0; background-size: 110px 110px;}
 .cover-read-o{background:rgba(0,0,0,0.1) url("https://scdn.kanbook.net/static/images/bookread.png") center center no-repeat;border-radius:50%;background-size: 110px 110px;}
 .cover-play:hover,.cover-read:hover,.cover-read-o:hover{opacity:1; background-size: 55px 55px; cursor:pointer;}
-.cover-serial{top:-1px;left:-1px;width:48px; height:48px;background: url("https://scdn.kanbook.net/static/images/videoplay.png") no-repeat 0 -144px;z-index: 0;position:absolute;}
+.cover-serial{top:-1px;left:-1px;width:48px; height:48px;background: url("https://scdn.kanbook.net/static/images/bg_status.png") no-repeat 0 -144px;z-index: 0;position:absolute;}
 .cover-serial-1{background-position:0 -192px;width:48px; height:48px;}
 .cover-serial-2{background-position:0 -240px;width:58px; height:58px;}
 .cover-serial-3{background-position:0 -298px;width:58px;height:58px;}
