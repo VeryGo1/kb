@@ -136,7 +136,7 @@ a:focus,button:focus{outline:none}body{background-color:#f0f2f5;color:rgba(0,0,0
 .go-search-box input:-ms-input-placeholder{color:#eee;opacity:1}
 .go-search-box input::-webkit-input-placeholder{color:#eee;opacity:1}
 /*.qrcode-content{ position:relative;background:url(/static/images/qrcode_bg.webp) center center no-repeat rgba(0,0,0,1);background-size:200% auto;}*/
-.qrcode-content{ position:relative;background:url('https://scdn.kanbook.net/static/images/qrcode-bg.gif') center center no-repeat rgba(0,0,0,1);background-size:200% auto;}
+.qrcode-content{ position:relative;background:url('https://scdn.kanbook.net/static/images/qrcode_bg.gif') center center no-repeat rgba(0,0,0,1);background-size:200% auto;}
 /*.qrcode-content canvas:first-child{position:absolute;top:7px; left:7px; z-index:2;}
 .qrcode-content canvas:nth-child(3){position:absolute;top:6px; left:6px; z-index:1;}*/
 
