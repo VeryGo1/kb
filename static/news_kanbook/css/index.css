@@ -15,8 +15,8 @@ p{text-align:justify;line-height:180%;margin-bottom:15px}
 @media (min-width:960px){.top-bg{background-size:350px;}}
 /*.top-bg2{background-image:url("../../images/default_mini.gif");background-size:600px,400px;background-repeat:no-repeat,no-repeat;background-position:right bottom,64% bottom}
 .top-bg3{background-image:url("../../images/default_mini.gif"),url("../images/logo.png");background-size:201px,100px;background-repeat:no-repeat,no-repeat;background-position:right bottom,right 30%}*/
-.top-bg2{background-image:url("data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=");background-size:600px,400px;background-repeat:no-repeat,no-repeat;background-position:right bottom,64% bottom}
-.top-bg3{background-image:url("data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="),url("../images/logo.png");background-size:201px,100px;background-repeat:no-repeat,no-repeat;background-position:right bottom,right 30%}
+.top-bg2{background-image:url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");background-size:600px,400px;background-repeat:no-repeat,no-repeat;background-position:right bottom,64% bottom}
+.top-bg3{background-image:url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"),url("../images/logo.png");background-size:201px,100px;background-repeat:no-repeat,no-repeat;background-position:right bottom,right 30%}
 .navbar{font-size:1rem;box-shadow:0 1px 4px 0 rgba(0,0,0,0.3)}
 .shadow{box-shadow:0 1px 4px 0 rgba(0,0,0,0.3)}
 .comic-meta-data-table th{white-space:nowrap;width:80px}
