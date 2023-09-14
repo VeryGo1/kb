@@ -1,5 +1,6 @@
 .ct{margin-bottom:80px;}
 .ct .content-wrapper *{font-size: 18px; line-height: 30px; font-weight: 400;color: #494949;}
+.ct .content-wrapper a{color:dodgerblue;}
 .ct .content-wrapper h3,.ct .content-wrapper h1,.ct .content-wrapper h2{text-align: left; margin: 1em 0; }
 .ct .content-wrapper p{margin: 1.7em 0;}
 .ct .content-wrapper ul{margin: 0.2em 0;padding:0; width:100%; }
